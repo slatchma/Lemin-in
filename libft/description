@@ -1,0 +1,467 @@
+--- DESCRIPTION ---
+
+PRO : prototype
+
+DES : description
+ENT : entree 1 || Entree 2 || Entree 3
+SOR : sortie
+
+--- 1
+PRO : int       ft_atoi(char *str);
+
+DES : Trouve dans la chaine de charactere le premier nbre (s'il n'est precede que de \t, \r, \v, \n, \f) et le tranforme en int
+ENT : chaine de charactere
+SOR : le nbre trouve
+
+--- 2
+PRO : void      ft_bzero(void *s, size_t n);
+
+DES : met à 0 (octets contenant « \0 ») les n premiers octets du bloc pointé par s
+ENT : void *s || le nbre octet qu'il faut copier
+SOR : rien
+
+--- 3
+PRO : int       ft_isalnum(int c);
+
+DES : regarde si c'est bien une lettre (majuscule ou minuscule) ou un chiffre
+ENT : charactere (en valeur ascii)
+SOR : renvoie le charactere c ou 0 si ce n'est pas une lettre ou un chiffre
+
+--- 4
+PRO : int       ft_isalpha(int c);
+
+DES : regarde si c'est bien une lettre (majuscule ou minuscule)
+ENT : charactere (en valeur ascii)
+SOR : renvoie le charactere c ou 0 si ce n'est pas une lettre
+
+--- 5
+PRO : int       ft_isascii(int c);
+DES : regarde si c'est bien un charactere ASCII
+ENT : charactere
+SOR : renvoie le charactere c ou 0 si ce n'est pas un charactere ASCII
+
+----- 6
+PRO : int       ft_isdigit(int c);
+
+DES : regarde si c'est bien un chiffre
+ENT : charactere (en valeur ascii)
+SOR : renvoie le charactere c ou 0 si ce n'est pas un chiffre
+
+--- 7
+PRO : int       ft_isprint(int c);
+
+DES : regarde si c'est bien un charactere affichable
+ENT : charactere
+SOR : renvoie le charactere c ou 0 si ce n'est pas un charactere affichable
+
+--- 8
+PRO : char      *ft_itoa(int nb);
+
+DES : Transforme un nombre en chaines de caractères
+ENT : nombres en int à convertir
+SOR : le nombre en chaine de caractères fini par un '\0'
+
+--- 9
+PRO : void      ft_lstaffich(t_llist *malist);
+
+DES : Affiche ce que contient la liste chainée
+ENT : La liste chainée
+SOR : Rien (cette fonctionne affiche seulement)
+
+--- 10
+PRO : int		    ft_lstcompt(t_llist *malist);
+
+DES : Compte le nombre de maillon qu'il y a dans la liste chainée
+ENT : La liste chainée
+SOR : Le nombre de maillon
+
+--- 11
+PRO : t_llist   *ft_lstend(t_llist *malist, int val)
+
+DES : rajoute un maillon en fin de liste
+ENT : la liste chainée || valeur à ajouter au maillon
+SOR : la liste chainée avec le maillon en fin de liste
+
+--- 12
+PRO : t_llist		*ft_lstfirst(t_llist *malist, int val);
+
+DES : rajoute un maillon au début de la liste chainée
+ENT : La liste chainée || valeur à rajouter au maillon
+SOR : la liste chainee avec le maillon au début de liste
+
+--- 13
+ PRO : t_llist		*ft_lstnsearch(t_llist *malist, size_t n);
+
+ DES : Va chercher le n-ème maillon de la liste chainée
+ ENT : La liste chainée || n
+ SOR : Le n-ème maillon ou NULL s'il ne trouve rien
+
+ --- 14
+ PRO : t_llist		ft_lstsearch(t_llist *malist, int val)
+
+ DES : Va chercher le maillon contenant la valeur val
+ ENT : La liste chainée || la valeur à chercher
+ SOR : Renvoie le maillon contenant la valeur cherchée ou NULL s'il ne trouve pas
+
+ --- 15
+ PRO : t_llist		*ft_lstsupdel(t_llist *malist, int n);
+
+ DES : supprime le n-ème maillon (si n = -1, supprime le dernier maillon), n commence a 0
+ ENT : La liste chainée || n
+ SOR : Renvoie la liste chainée avec le n-ème maillon en moins
+
+ --- 16
+PRO : void				*ft_memalloc(size_t size);
+
+DES : Alloue (avec malloc(3)) et retourne une zone de mémoire
+“fraiche”. La mémoire allouée est initialisée à 0. Si l’allocation
+échoue, la fonction renvoie NULL
+ENT : La taille de la zone de mémoire à allouer
+SOR : La zone de mémoire allouée
+
+--- 17
+PRO : void			 *ft_memccpy(void *dest, const void *src, int c, size_t n);
+
+DES : copie au plus n octets de la zone mémoire src vers la zone mémoire dest, s'arrêtant dès qu'elle rencontre le caractère c
+ENT : dest || src || charactere c qui limite la copie || n octet qu'il faut copier
+SOR : renvoie un pointeur sur le caractère immédiatement après c dans la zone dest, ou NULL si c n'a pas été trouvé dans les n premiers caractères de src
+
+--- 18
+PRO : void	     *ft_memchr(const void *s, int c, size_t n);
+
+DES : examine les n premiers octets de la zone mémoire pointée par s à la recherche du caractère c. Le premier octet correspondant à c (interprété comme un unsigned char) arrête l'opération
+ENT : chaine de charactere s || character c a chercher | n octet
+SOR : renvoient un pointeur sur l'octet correspondant, ou NULL si le caractère n'est pas présent dans la zone de mémoire concernée
+
+--- 19
+PRO : int         ft_memcmp(const void *s1, const void *s2, size_t n);
+
+DES : compare les n premiers octets des zones mémoire s1 et s2
+ENT : s1 || s2 || n octet a comparer
+SOR : renvoie un entier négatif, nul ou positif si les n premiers octets de s1 sont respectivement inférieurs, égaux ou supérieurs aux n premiers octets de s2
+
+--- 20
+PRO : void        *ft_memcpy(void *dest, const void *src, size_t n);
+
+DES : copie n octets depuis la zone mémoire src vers la zone mémoire dest
+ENT : dest || src || n octet au'il faut copier
+SOR : renvoie un pointeur sur dest
+
+--- 21
+PRO : void 				ft_memdel(void **ap);
+
+DES : Prend en paramètre l’adresse d’un pointeur dont la zone poin- tée doit être libérée avec free(3), puis le pointeur est mis à NULL.
+ENT : L’adresse d’un pointeur dont il faut libérer la mémoire puis le mettre à NULL
+SOR : rien
+
+--- 22
+PRO : void			 *ft_memmove(void *dest, const void *src, size_t n);
+
+DES : copie n octets depuis la zone mémoire src vers la zone mémoire dest. Les deux zones peuvent se chevaucher : la copie se passe comme si les octets de src étaient d'abord copiés dans une zone temporaire qui ne chevauche ni src ni dest, et les octets sont ensuite copiés de la zone temporaire vers dest.
+ENT : Dest || Src || nbre octet à copier
+SOR : Renvoie un pointeur sur dest
+
+--- 23
+PRO : void	     *ft_memset(void *s, int c, size_t n);
+
+DES : La fonction remplit les n premiers octets de la zone mémoire pointée par s avec l'octet c.
+ENT : void *s || octet c || le nbre octet qu'il faut copier
+SOR : renvoie un pointeur sur la zone mémoire s
+
+--- 24
+PRO : void				ft_putchar_fd(char c, int fd);
+
+DES : Ecrit le caractère c sur le descripteur de fichier fd
+ENT : Le charactère à écrire || Le descripteur du fichier
+SOR : Rien
+
+--- 25
+PRO : void        ft_putchar(char c);
+
+DES : Affiche le caractère c sur la sortie standard
+ENT : Le caractère à afficher
+SOR : Rien
+
+--- 26
+PRO : void				ft_putendl_fd(char const *s, int fd);
+
+DES : Ecrit la chaine s sur le descripteur de fichier fd suivi d’un ’\n’.
+ENT : La chaine de caractères à écrire || Le descripteur de fichier
+SOR : Rien
+
+--- 27
+PRO : void				ft_putendl(char const *s);
+
+DES : Affiche la chaine s sur la sortie standard suivi d’un ’\n’
+ENT : La chaine de caractères à afficher
+SOR : Rien
+
+--- 28
+PRO : void				ft_putnbr_fd(int nb, int fd);
+
+DES : Ecrit l’entier n sur le descripteur de fichier fd
+ENT : L’entier à écrire || Le descripteur de fichier
+SOR : Rien
+
+--- 29
+PRO : void				ft_putnbr(int n);
+
+DES : Affiche l’entier n sur la sortie standard
+ENT : L'entier à afficher
+SOR : Rien
+
+--- 30
+PRO : void			 ft_putstr_fd(char const *s, int fd);
+
+DES : Ecrit la chaine s sur le descripteur de fichier fd
+ENT : La chaine de caractères à écrire || Le descripteur de fichier
+SOR : Rien
+
+--- 31
+PRO : void	     ft_putstr(char str[]);
+
+DES : Affiche la chaine str sur la sortie standard
+ENT : La chaine de caractères à afficher
+SOR : Rien
+
+--- 32
+PRO : char	     *ft_strcat(char *dest, const char *src);
+
+DES : ajoute la chaîne src à la fin de la chaîne dest en écrasant le caractère nul (« \0 ») à la fin de dest, puis en ajoutant un nouveau caractère nul final. Les chaînes ne doivent pas se chevaucher, et la chaîne dest doit être assez grande pour accueillir le résultat
+ENT : chaine de destination || chaine d'origine
+SOR : dest
+
+--- 33
+PRO : char	     *ft_strchr(const char *s, int c);
+
+DES : recherche la premiere occurence du  caractere c dans la chaine de charactere s
+ENT : chaine de caractere || charactere a chercher
+SOR : renvoi un pointeur sur la premiere occurrence du charactere c trouve ou NULL s'il n'a rien trouve
+
+--- 34
+PRO : void		   ft_strclr(char *s);
+
+DES : Assigne la valeur ’\0’ à tous les caractères de la chaine passée en paramètre
+ENT : La chaine de caractères à clearer
+SOR : Rien
+
+--- 35
+PRO : int	       ft_strcmp(char *s1, char *s2);
+
+DES : compare 2 chaines de charactere
+ENT : chaine de charactere 1 || chaine de charactere 2
+SOR : renvoi la valeur de la comparaison renvoi 0 si elles sont identiques
+
+--- 36
+PRO : char	     *ft_strcpy(char *dest, char *src);
+
+DES : copie la chaîne src (y compris '\0') dans la chaîne dest. La chaîne dest doit être assez grande pour accueillir la copie
+ENT : chaine destination || chaine copie
+SOR : pointeur sur la chaine dest
+
+--- 37
+PRO : void			 ft_strdel(char **as);
+
+DES : Prend en paramètre l’adresse d’une chaine de caractères qui doit être libérée avec free(3) et son pointeur mis à NULL
+ENT : L’adresse de la chaine de caractère dont il faut libérer la mé- moire et mettre le pointeur à NULL
+SOR : Rien
+
+--- 38
+PRO : char	     *ft_strdup(char *src);
+
+DES : renvoi un pointeur sur une nouvelle chaine de charactere avec une duplication de src
+ENT : la chaine de charactere
+SOR : le pointeur
+
+--- 39
+PRO : int				ft_strequ(char const *s1, char const *s2);
+
+DES : Compare lexicographiquement s1 et s2. Si les deux chaines sont égales, la fonction retourne 1, ou 0 sinon
+ENT : La première des deux chaines à comparer || La seconde des deux chaines à comparer
+SOR : 1 ou 0 selon que les deux chaines sont égales ou non
+
+--- 40
+PRO : void			ft_striter(char *s, void (*f)(char *));
+
+DES : Applique la fonction f à chaque caractère de la chaine de caractères passée en paramètre. Chaque caractère est passé par adresse à la fonction f afin de pouvoir être modifié si nécéssaire
+ENT : La chaine de caractères sur laquelle itérer || La fonction à appeler sur chaque caractère de s
+SOR : Rien
+
+--- 41
+PRO : void				ft_striteri(char *s, void (*f)(unsigned int, char *));
+
+DES : Applique la fonction f à chaque caractère de la chaine de caractères passée en paramètre en précisant son index en pre- mier argument. Chaque caractère est passé par adresse à la fonction f afin de pouvoir être modifié si nécéssaire
+ENT : La chaine de caractères sur laquelle itérer || La fonction à appeler sur chaque caractère de s et son index
+SOR : Rien
+
+--- 42
+PRO : char		    *ft_strjoin(char const *s1, char const *s2);
+
+DES : Alloue (avec malloc(3)) et retourne une chaine de caractères “fraiche” terminée par un ’\0’ résultant de la concaténation (s1 + s2) de s1 et s2. Si l’allocation echoue, la fonction renvoie NULL
+ENT : La chaine de caractères préfixe || La chaine de caractères suffixe
+SOR : La chaine de caractère “fraiche” résultant de la concaténation des deux chaines
+
+--- 43
+PRO : size_t	    ft_strlcat(char *dst, const char *src, size_t size);
+
+DES :
+ENT : dest || src || nbre d'octet a copier
+SOR :
+
+--- 44
+PRO : int	        ft_strlen(char *str);
+
+DES : calcule la longueur d'une chaîne de caractères (ne compte pas le caractère '\0')
+ENT : la chaine de charactere
+SOR : la longueur de la chaine (En gros le nbre de characteres dans la chaine)
+
+--- 45
+PRO : char				*ft_strmap(char const *s, char (*f)(char));
+
+DES : Applique la fonction f à chaque caractère de la chaine de caractères passée en paramètre pour créer une nouvelle chaine “fraiche” (avec malloc(3)) résultant des applications successives de f
+ENT : La chaine de caractères sur laquelle itérer || La fonction à appeler sur chaque caractère de s
+SOR : La chaine “fraiche” résultant des applications successives de f
+
+--- 46
+PRO : char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+
+DES : Applique la fonction f à chaque caractère de la chaine de caractères passée en paramètre en précisant son index pour créer une nouvelle chaine “fraiche” (avec malloc(3)) résultant des applications successives de f
+ENT : La chaine de caractères sur laquelle itérer || La fonction à appeler sur chaque caractère de s en précisant son index
+SOR : La chaine “fraiche” résultant des applications successives de f
+
+--- 47
+PRO : char	      *ft_strncat(char *dest, const char *src, size_t n);
+
+DES : est identique a strcat, à la différence que elle ne prend en compte que les n premiers charactères de src ; et src n'a pas besoin d'octet nul final si elle contient n caractères ou plus
+ENT : chaine de destination || chaine d'origine || nbre octet a copier
+SOR : dest
+
+--- 48
+PRO : int	        ft_strncmp(const char *s1, const char *s2, size_t n);
+
+DES : compare les n 1er charactere de s1 et s2
+ENT : chaine de charactere s1 || chaine de charactere s2 || n charactere a comparer
+SOR : renvoie la valeur de la comparaison, 0 s'ils sont identiques
+
+--- 49
+PRO : char	      *ft_strncpy(char *dest, char *src, size_t n);
+
+DES : pareil que strcpy sauf que seuls les n premiers octets de src sont copiés. Dans le cas où la longueur de src est inférieure à n, la fin de dest sera remplie avec des '\0'
+ENT : chaine destination || chaine copie || nbre octet a copier
+SOR : pointeur sur dest
+
+--- 50
+PRO : int					ft_strnequ(char const *s1, char const *s2, size_t n);
+
+DES : Compare lexicographiquement s1 et s2 jusqu’à n caractères maximum ou bien qu’un ’\0’ ait été rencontré. Si les deux chaines sont égales, la fonction retourne 1, ou 0 sinon
+ENT : La première des deux chaines à comparer || La seconde des deux chaines à comparer || Le nombre de caractères à comparer au maximum
+SOR : 1 ou 0 selon que les deux chaines sont égales ou non
+
+--- 51
+PRO : char				*ft_strnew(size_t size);
+
+DES : Alloue (avec malloc(3)) et retourne une chaine de caractère “fraiche” terminée par un ’\0’. Chaque caractère de la chaine est initialisé à ’\0’. Si l’allocation echoue, la fonction renvoie NULL
+ENT : La taille de la chaine de caractères à allouer
+SOR : La chaine de caractères allouée et initialisée à 0
+
+--- 52
+PRO : char		    *ft_strnstr(const char *arbre, const char *feuille, size_t n);
+
+DES : la meme chose que ft_strstr a la difference au'elle ne prend en compte que les n pre;ier characteres de "arbre"
+ENT : chaine de charactere || la chaine de charactere qu'il faut chercher dans l'autre
+SOR : renvoie un pointeur sur le debut de la chaine "feuille" trouve dans la chaine de charactere "arbre" ou NULL si rien trouvé
+
+--- 53
+PRO : char	      *ft_strrchr(const char *s, int c)
+
+DES : Recherche la derniere occurence du charactere c dans la chaine de charactere s
+ENT : chaine de caractere || charactere a chercher
+SOR : renvoi un pointeur sur la derniere occurrence du charactere c trouve ou NULL s'il n'a rien trouve
+
+--- 54
+PRO : char				**ft_strsplit(char const *s, char c);
+
+DES : Alloue (avec malloc(3)) et retourne un tableau de chaines de caractères “fraiches” (toutes terminées par un ’\0’, le tableau également donc) résultant de la découpe de s selon le caractère c. Si l’allocation echoue, la fonction retourne NULL. Exemple : ft_strsplit("*salut*les***etudiants*", ’*’) renvoie le tableau ["salut", "les", "etudiants"]
+ENT : La chaine de caractères à découper || Le caractère selon lequel découper la chaine
+SOR : Le tableau de chaines de caractères “fraiches” résultant de la découpe
+
+--- 55
+PRO : char		    *ft_strstr(const char *arbre, const char *feuille);
+
+DES : Recherche la premiere occurence de la chaine de charactere "feuille" dans la chaine de charactere "arbre"
+ENT : chaine de charactere || la chaine de charactere qu'il faut chercher dans l'autre || nbre d'octet a regarder
+SOR : renvoie un pointeur sur le debut de la chaine "feuille" trouve dans la chaine de charactere "arbre" ou NULL si rien trouvé
+
+--- 56
+PRO : char				*ft_strsub(char const *s, unsigned int start, size_t len);
+
+DES : Alloue (avec malloc(3)) et retourne la copie “fraiche” d’un tronçon de la chaine de caractères passée en paramètre. Le tronçon commence à l’index start et à pour longueur len. Si start et len ne désignent pas un tronçon de chaine valide, le comportement est indéterminé. Si l’allocation échoue, la fonction renvoie NULL
+ENT : La chaine de caractères dans laquelle chercher le tronçon à copier || L’index dans la chaine de caractères où débute le tronçon à copier || La longueur du tronçon à copier
+SOR : Le tronçon
+
+--- 57
+PRO : char				*ft_strtrim(char const *s);
+
+DES : Alloue (avec malloc(3)) et retourne une copie de la chaine passée en paramètre sans les espaces blancs au debut et à la fin de cette chaine. On considère comme espaces blancs les caractères ’ ’, ’\n’ et ’\t’. Si s ne contient pas d’espaces blancs au début ou à la fin, la fonction renvoie une copie de s. Si l’allocation echoue, la fonction renvoie NULL
+ENT : La chaine de caractères à trimmer
+SOR : La chaine de caractère “fraiche” trimmée ou bien une copie de s sinon
+
+--- 58
+PRO : int		     ft_tolower(int c)
+
+DES : convertit une lettre c en minuscule si possible
+ENT : charactere
+SOR : renvoie la lettre convertie, ou bien c si la conversion n'a pas eu lieu
+
+--- 59
+PRO : int		     ft_toupper(int c);
+
+DES : convertit une lettre c en majuscule si possible
+ENT : charactere
+SOR : renvoie la lettre convertie, ou bien c si la conversion n'a pas eu lieu
+
+--- 60
+PRO : int	     ft_strsupchr(const char *s, int c);
+
+DES : recherche la premiere occurence du  caractere c dans la chaine de charactere s
+ENT : chaine de caractere || charactere a chercher
+SOR : renvoi un int qui correspond à la case de la premiere occurrence du charactere c trouvé ou -1 s'il n'a rien trouvé
+
+--- 61
+PRO : int		get_next_line(const int fd, char **line);
+
+DES : Recupere ce qu'il y a en entree standard jusqu'au "\n" (si on met un fd de 0, c'est equivalent a un scanf)
+ENT : descripteur de fichier (fd) || le char qui va sauvegarder ce qu'il lit (ex : "result = get_next_line(fd, &line)")
+SOR : retourne 1 s'il a trouvé quelquechose, 0 sinon
+
+EXEMPLE DE MAIN POUR GNL
+int		main(int argc, char **argv)
+{
+	int		fd;
+	char	*line;
+	int		result;
+	int		compt;
+
+	compt = 0;
+	if (argc == 1)
+		fd = 0;
+	else if (argc == 2)
+		fd = open(argv[1], O_RDONLY);
+	else
+		return (2);
+	while ((result = get_next_line(fd, &line)) == 1)
+	{
+		printf("line = -%s-\n",line);
+		compt++;
+	}
+	if (argc == 2)
+		close(fd);
+	return (0);
+}
+
+--- 62
+PRO : char	*ft_strndup(char *src, int c)
+
+DES : renvoi un pointeur sur une nouvelle chaine de charactere avec une duplication de src jusqu'au charactère c
+ENT : la chaine de charactere
+SOR : le pointeur
